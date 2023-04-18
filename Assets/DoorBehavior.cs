@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DoorBehavior : MonoBehaviour
 {
-    public int buttonsFilled = 0;
+    
     private Transform doorStartPosition;
     [SerializeField] private Transform doorEndPosition;
+    [SerializeField] private int buttonReq;
+    [SerializeField] private movementTest playerScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +18,13 @@ public class DoorBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(buttonsFilled);
+        
 
-        if(buttonsFilled == 2)
+        if(playerScript.buttonsFilled == buttonReq)
         {
             transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .01f);
         }
     }
 
-    public void FillButtons()
-    {
-        buttonsFilled++;
-    }
+    
 }

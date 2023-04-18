@@ -9,7 +9,7 @@ public class FollowPlayer : MonoBehaviour
     private bool goToButton = false;
     private float speed = 6f;
     [SerializeField] private GameObject player;
-    [SerializeField] private DoorBehavior doorBehavior = null;
+    [SerializeField] private movementTest playerScript = null;
     private Transform buttonPos;
    
 
@@ -55,7 +55,9 @@ public class FollowPlayer : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             buttonPos = other.GetComponent<Transform>();
             other.enabled= false;
-            doorBehavior.FillButtons();
+            playerScript.FillButtons();
         }
     }
+
+    
 }

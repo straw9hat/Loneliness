@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class movementTest : MonoBehaviour
 {
+    public int buttonsFilled = 0;
     public float speed = 5.0f;
     // Start is called before the first frame update
     void Start()
@@ -33,5 +34,10 @@ public class movementTest : MonoBehaviour
         }
         this.transform.position = pos;
         this.transform.rotation = new Quaternion(0, 0, 0, 0);
+    }
+
+    public void FillButtons()
+    {
+        buttonsFilled++;
     }
 }
