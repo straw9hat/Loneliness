@@ -57,6 +57,7 @@ public class FollowPlayer : MonoBehaviour
             other.enabled= false;
             playerScript.FillButtons();
         }
+
     }
 
     
