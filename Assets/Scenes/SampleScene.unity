@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13568363, g: 0.09222871, b: 0.06731677, a: 1}
+  m_IndirectSpecularColor: {r: 1.5956402, g: 1.1843367, b: 1.1192493, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1178,8 +1178,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.09433961, g: 0.08896707, b: 0.07431469, a: 1}
-  m_Intensity: 321.05762
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 34.66773
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 321.05762
+  m_Intensity: 34.66773
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -3250,7 +3250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1816484235}
   - component: {fileID: 1816484234}
-  - component: {fileID: 1816484236}
   m_Layer: 0
   m_Name: FirstRoomButton
   m_TagString: Button
@@ -3287,21 +3286,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1816484236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816484233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbffb12c3858bd4999607941724d3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1711239626}
-  doorStartPos: {fileID: 0}
-  doorOpenPos: {fileID: 1319141110}
 --- !u!1 &1832290299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,7 +3394,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1940797979}
   - component: {fileID: 1940797978}
-  - component: {fileID: 1940797977}
   m_Layer: 0
   m_Name: FirstRoomButton (1)
   m_TagString: Button
@@ -3418,21 +3401,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1940797977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940797976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbffb12c3858bd4999607941724d3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1711239626}
-  doorStartPos: {fileID: 0}
-  doorOpenPos: {fileID: 1319141110}
 --- !u!65 &1940797978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3517,7 +3485,7 @@ Transform:
   - {fileID: 1832290300}
   - {fileID: 1718662214}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2021338688 stripped
 GameObject:
@@ -3972,7 +3940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6082959238422996133, guid: b5c1e377148ced74697fd9f3d1709cfc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6082959238422996133, guid: b5c1e377148ced74697fd9f3d1709cfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3980,7 +3948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6082959238422996133, guid: b5c1e377148ced74697fd9f3d1709cfc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 6082959238422996133, guid: b5c1e377148ced74697fd9f3d1709cfc, type: 3}
       propertyPath: m_LocalPosition.z
