@@ -27,7 +27,7 @@ public class FollowPlayer : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.transform.position);
       
         
-        if (isFollowing && distance > 1)
+        if (isFollowing && distance > 2)
         {
             Vector3 direction = (player.transform.position - transform.position).normalized;
             this.transform.Translate(direction * speed * Time.deltaTime);
