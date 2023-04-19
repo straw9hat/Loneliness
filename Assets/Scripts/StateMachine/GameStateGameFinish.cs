@@ -33,7 +33,8 @@ public class GameStateGameFinish : GameState
             //obj.gameObject.GetComponent<BoxCollider>().enabled = true;
             GameObject.Destroy(obj.GetComponent<SpringJoint>());
             GameObject.Destroy(obj.GetComponent<Rigidbody>());
-            obj.transform.localPosition = Vector3.MoveTowards(obj.transform.localPosition, new Vector3(-600.9f, -0.5f, 0.803f), 0.1f);
+            Vector3 pos = new Vector3(-290f, -0.5f, 0.803f);
+            obj.transform.position = Vector3.MoveTowards(obj.transform.position, pos, 0.01f);
             //obj.transform.Translate(new Vector3(-283.9f, -0.5f, 0.803f)); 
         }
     }
@@ -50,6 +51,11 @@ public class GameStateGameFinish : GameState
     public override void Update()
     {
         base.Update();
+        foreach(GameObject obj in corridorGhosts)
+        {
+            Vector3 pos = new Vector3(-290f, -0.5f, 0.803f);
+            obj.transform.position = Vector3.MoveTowards(obj.transform.position, pos, 0.05f);
+        }
         if (trapDoorTrigger.finsihLine)
         {
             onGameRestart();
