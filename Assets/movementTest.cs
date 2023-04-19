@@ -7,7 +7,8 @@ public class movementTest : MonoBehaviour
 {
     public int buttonsFilled = 0;
     public float speed = 5.0f;
-    private bool playCutscene = false;
+    public float rotationSpeed = 720f;
+    public static bool playCutscene = false;
 
 
     Vector3 buttonPos;

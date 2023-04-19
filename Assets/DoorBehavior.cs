@@ -24,13 +24,33 @@ public class DoorBehavior : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .01f);
         }
+        if(GameStateGameFinish.lastGate)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .01f);
+        }
     }
 
     public void closeDoor()
     {
         roomEnd = true;
         Vector3 pos = transform.localPosition;
-        pos.z = 1.5f;
+        if(this.name == "Door1Flow")
+        {
+            pos.z = 1.24f;
+        }
+        if (this.name == "Door2Flow")
+        {
+            pos.z = -21.45f;
+        }
+        if (this.name == "Door3Flow")
+        {
+            pos.z = -0.45f;
+        }
+        if (this.name == "Door4Flow")
+        {
+            pos.z = -0.45f;
+        }
+
         Debug.Log(transform.position);
         Debug.Log(transform.localPosition);
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, pos, 4);

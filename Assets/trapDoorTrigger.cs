@@ -10,6 +10,7 @@ public class trapDoorTrigger : MonoBehaviour
     public static bool trapDoor1 = false;
     public static bool trapDoor2 = false;
     public static bool trapDoor3 = false;
+    public static bool finsihLine = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +30,15 @@ public class trapDoorTrigger : MonoBehaviour
         {
             Debug.Log("in");
             trapDoor1 = true;
-            Vector3 pos = Camera.main.transform.localPosition;
-            Debug.Log(Camera.main.transform.position);
-            Debug.Log(Camera.main.transform.localPosition);
-            pos.x = 8;
-            Camera.main.transform.localPosition = pos;
-            await threeSecondDelay();
-            Debug.Log("done");
-            pos.x = -1.09f;
-            Camera.main.transform.localPosition = pos;
+            //Vector3 pos = Camera.main.transform.localPosition;
+            //Debug.Log(Camera.main.transform.position);
+            //Debug.Log(Camera.main.transform.localPosition);
+            //pos.x = 8;
+            //Camera.main.transform.localPosition = pos;
+            //await threeSecondDelay();
+            //Debug.Log("done");
+            //pos.x = -1.09f;
+            //Camera.main.transform.localPosition = pos;
 
         }
         if (this.name == "ExitTrigger2")
@@ -48,11 +49,15 @@ public class trapDoorTrigger : MonoBehaviour
         {
             trapDoor3 = true;
         }
+        if (this.name == "ExitTrigger3")
+        {
+            finsihLine = true;
+        }
         this.gameObject.SetActive(false);
     }
 
-    private async Task threeSecondDelay()
-    {
-        await Task.Delay(TimeSpan.FromSeconds(5));
-    }
+    //private async Task threeSecondDelay()
+    //{
+    //    await Task.Delay(TimeSpan.FromSeconds(5));
+    //}
 }
