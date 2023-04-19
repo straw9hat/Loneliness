@@ -31,7 +31,7 @@ public class GameStateThirdRoom : GameState
     public override void Update()
     {
         base.Update();
-        if (Input.GetKey(KeyCode.Alpha3))
+        if (trapDoorTrigger.trapDoor3)
         {
             onFinalCorridorEnter();
         }

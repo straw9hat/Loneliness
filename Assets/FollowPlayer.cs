@@ -27,7 +27,7 @@ public class FollowPlayer : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.transform.position);
       
         
-        if (isFollowing && distance > 2)
+        if (isFollowing && (distance > 2))
         {
             Vector3 direction = (player.transform.position - transform.position).normalized;
             this.transform.Translate(direction * speed * Time.deltaTime);
@@ -55,10 +55,17 @@ public class FollowPlayer : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             buttonPos = other.GetComponent<Transform>();
             other.enabled= false;
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
             playerScript.FillButtons();
+            this.tag = "RoomOneGhosts";
         }
 
     }
 
-    
+    public void trappedIn()
+    {
+        isFollowing = true;
+        goToButton = false;
+        GetComponent<BoxCollider>().enabled = true;
+    }
 }

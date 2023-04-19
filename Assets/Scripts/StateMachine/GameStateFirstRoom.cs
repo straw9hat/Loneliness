@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameStateFirstRoom : GameState
 {
+    public GameObject trapDoor;
     public GameStateFirstRoom(StateManager stateManager) : base("FirstRoom", stateManager)
     {
 
@@ -19,6 +20,7 @@ public class GameStateFirstRoom : GameState
         base.OnEnter();
         GameEventManager.FirstRoomEvent += onSecondRoomEnter;
         Debug.Log("Entered First Room");
+        trapDoor = GameObject.Find("Door1");
     }
 
     public override void OnExit()
@@ -31,7 +33,7 @@ public class GameStateFirstRoom : GameState
     public override void Update()
     {
         base.Update();
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (trapDoorTrigger.trapDoor1)
         {
             onSecondRoomEnter();
         }
