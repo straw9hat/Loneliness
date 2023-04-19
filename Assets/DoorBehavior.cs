@@ -24,7 +24,7 @@ public class DoorBehavior : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .01f);
         }
-        if(GameStateGameFinish.lastGate)
+        if(GameStateGameFinish.lastGate && this.name == "Door4Flow")
         {
             transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .01f);
         }
