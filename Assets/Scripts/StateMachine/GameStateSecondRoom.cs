@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameStateSecondRoom : GameState
 {
     public GameObject[] room1Ghosts = new GameObject[3];
+    private GameObject door;
     public GameStateSecondRoom(StateManager stateManager) : base("SecondRoom", stateManager)
     {
 
@@ -21,6 +22,8 @@ public class GameStateSecondRoom : GameState
         base.OnEnter();
         GameEventManager.MainMenuEvent += onThirdRoomEnter;
         Debug.Log("Entered Second Room");
+        door = GameObject.Find("Door1Flow");
+        door.GetComponent<DoorBehavior>().closeDoor();
         room1Ghosts = GameObject.FindGameObjectsWithTag("RoomOneGhosts");
         foreach (GameObject obj in room1Ghosts)
         {
