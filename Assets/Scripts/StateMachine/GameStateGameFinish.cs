@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateGameFinish : GameState
 {
-    public GameObject[] corridorGhosts = new GameObject[14];
+    public GameObject[] corridorGhosts = new GameObject[32];
     private GameObject door;
     public static bool lastGate = false;
     public GameStateGameFinish(StateManager stateManager) : base("GameFinish", stateManager)
@@ -31,7 +32,9 @@ public class GameStateGameFinish : GameState
             //obj.gameObject.GetComponent<FollowPlayer>().enabled = false;
             //obj.gameObject.GetComponent<BoxCollider>().enabled = true;
             GameObject.Destroy(obj.GetComponent<SpringJoint>());
-            obj.transform.position = Vector3.MoveTowards(obj.transform.position, new Vector3(-283.9f, -0.5f, 0.803f), 1200 * Time.deltaTime);
+            GameObject.Destroy(obj.GetComponent<Rigidbody>());
+            obj.transform.localPosition = Vector3.MoveTowards(obj.transform.localPosition, new Vector3(-283.9f, -0.5f, 0.803f), 0.1f);
+            //obj.transform.Translate(new Vector3(-283.9f, -0.5f, 0.803f));
         }
     }
 
@@ -66,6 +69,6 @@ public class GameStateGameFinish : GameState
 
     private void onGameRestart()
     {
-        StateManager.SetNewState(StateManager.MainMenu);
+        //SceneManager.LoadScene("SampleScene");
     }
 }

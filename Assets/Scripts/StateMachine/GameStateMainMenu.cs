@@ -32,7 +32,7 @@ public class GameStateMainMenu : GameState
     public override void Update()
     {
         base.Update();
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.anyKey)
         {
             onFirstRoomEnter();
         }

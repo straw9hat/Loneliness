@@ -49,7 +49,7 @@ public class trapDoorTrigger : MonoBehaviour
         {
             trapDoor3 = true;
         }
-        if (this.name == "ExitTrigger3")
+        if (this.name == "ExitTrigger4")
         {
             finsihLine = true;
         }
