@@ -16,7 +16,7 @@ public class PlayerSpotLight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spotLightData(40000f, 179f, 100);
+        spotLightData(22000f, 179f, 100);
         
     }
 
@@ -25,18 +25,18 @@ public class PlayerSpotLight : MonoBehaviour
     { 
     switch (playerScript.buttonsFilled)
         {
-            case 0: spotLightData(25000f, 179f, 100); break;
-            case 1: spotLightData(20000f, 100f, 100); break;
+            case 0: spotLightData(22000f, 179f, 100); break;
+            case 1: spotLightData(18000f, 100f, 100); break;
             case 2: spotLightData(18000f, 87f, 90); break;
             case 3: spotLightData(18000f, 77f, 80); break;
             case 4: spotLightData(18000f, 68f, 75); break;
             case 5: spotLightData(18000f, 60f, 75); break;
-            case 6: spotLightData(18000f, 52f, 75); break;
-            case 7: spotLightData(22000f, 45f, 75); break;
+            case 6: spotLightData(21000f, 52f, 75); break;
+            case 7: spotLightData(23000f, 45f, 75); break;
             case 8: spotLightData(25000f, 39f, 75); break;
-            case 9: spotLightData(27000f, 34f, 75); break;
-            case 10: spotLightData(30000f, 30f, 75); break;
-            default: spotLightData(40000f, 179f, 100); break;
+            case 9: spotLightData(26000f, 34f, 75); break;
+            case 10: spotLightData(27000f, 30f, 75); break;
+            default: spotLightData(22000f, 179f, 100); break;
         }
 
     }
