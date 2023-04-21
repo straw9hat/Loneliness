@@ -23,6 +23,7 @@ public class GameStateFinalCorridor : GameState
         Debug.Log("Entered Final Corridor");
         door = GameObject.Find("Door3Flow");
         door.GetComponent<DoorBehavior>().closeDoor();
+        GameObject.Find("Player").GetComponent<Rigidbody>().isKinematic = true;
         room1Ghosts = GameObject.FindGameObjectsWithTag("RoomOneGhosts");
         
     }
