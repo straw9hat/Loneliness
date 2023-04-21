@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using static UnityEditor.PlayerSettings;
 
 public class GameStateMainMenu : GameState
 {
@@ -22,7 +23,6 @@ public class GameStateMainMenu : GameState
         GameEventManager.MainMenuEvent += onFirstRoomEnter;
         Debug.Log("Entered Main Menu");
         door = GameObject.Find("Door4Flow");
-        door.GetComponent<DoorBehavior>().closeDoor();
     }
 
     public override void OnExit()
@@ -35,6 +35,9 @@ public class GameStateMainMenu : GameState
     public override void Update()
     {
         base.Update();
+        Vector3 pos = door.transform.localPosition;
+        pos.z = -0.45f;
+        door.transform.localPosition = Vector3.MoveTowards(door.transform.localPosition, pos, 4);
         if (Input.anyKey)
         {
             onFirstRoomEnter();
