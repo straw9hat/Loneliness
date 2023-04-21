@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,7 +34,7 @@ public class GameStateGameFinish : GameState
             //obj.gameObject.GetComponent<FollowPlayer>().enabled = false;
             //obj.gameObject.GetComponent<BoxCollider>().enabled = true;
             GameObject.Destroy(obj.GetComponent<SpringJoint>());
-            GameObject.Destroy(obj.GetComponent<Rigidbody>());
+            //GameObject.Destroy(obj.GetComponent<Rigidbody>());
             Vector3 pos = new Vector3(-290f, -0.5f, 0.803f);
             obj.transform.position = Vector3.MoveTowards(obj.transform.position, pos, 0.01f);
             //obj.transform.Translate(new Vector3(-283.9f, -0.5f, 0.803f)); 
@@ -73,8 +75,9 @@ public class GameStateGameFinish : GameState
 
     }
 
-    private void onGameRestart()
+    private  void onGameRestart()
     {
+        StateManager.SetNewState(StateManager.MainMenu);
         //SceneManager.LoadScene("SampleScene");
     }
 }

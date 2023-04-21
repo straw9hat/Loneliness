@@ -5,6 +5,8 @@ using UnityEngine;
 public class DoorBehavior : MonoBehaviour
 {
     private bool roomEnd = false;
+    private bool switchedOn = false;
+    private bool soundPlayed = false;
     private Transform doorStartPosition;
     [SerializeField] private Transform doorEndPosition;
     [SerializeField] private int buttonReq;
@@ -18,18 +20,31 @@ public class DoorBehavior : MonoBehaviour
 
     void Update()
     {
-        
+        var pos = transform.position;
 
         if(playerScript.buttonsFilled == buttonReq && !roomEnd)
         {
-            doorAudio.Play();
+            
+            //doorAudio.Play();
+            switchedOn = true;
             transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .05f);
+            
         }
         if(GameStateGameFinish.lastGate && this.name == "Door4Flow")
         {
-            doorAudio.Play();
+            //doorAudio.Play();
+            switchedOn = true;
             transform.position = Vector3.MoveTowards(transform.position, doorEndPosition.position, .01f);
             
+        }
+        if (switchedOn == true && doorAudio.isPlaying == false && !soundPlayed)
+        {
+            doorAudio.Play();
+            soundPlayed = true;
+        }
+        else if (switchedOn == false && doorAudio.isPlaying == true)
+        {
+            doorAudio.Stop();
         }
     }
 

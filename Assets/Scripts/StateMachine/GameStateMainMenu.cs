@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameStateMainMenu : GameState
 {
     //private GameObject mainMenu;
+    private GameObject door;
     public GameStateMainMenu(StateManager stateManager) : base("MainMenu", stateManager)
     {
 
@@ -20,6 +21,8 @@ public class GameStateMainMenu : GameState
         base.OnEnter();
         GameEventManager.MainMenuEvent += onFirstRoomEnter;
         Debug.Log("Entered Main Menu");
+        door = GameObject.Find("Door4Flow");
+        door.GetComponent<DoorBehavior>().closeDoor();
     }
 
     public override void OnExit()

@@ -87,7 +87,7 @@ public class movementTest : MonoBehaviour
     {
         var t = 1 / (transform.position - btnPos).magnitude;
         this.transform.position = Vector3.Lerp(transform.position, btnPos, t * 0.04f);
-        print(btnPos);
+      //  print(btnPos);
 
     }
 
